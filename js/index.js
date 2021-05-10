@@ -49,21 +49,21 @@ num--;
 // Таски на prompt:
 // 1) Запросить число у пользователя, возвести его в квадрат и вывести
 
-let suggestedNumber = prompt("Enter any number: ");
+const suggestedNumber = Number(prompt("Enter any number: "));
 alert("Square: " + suggestedNumber * suggestedNumber);
 
 // 2) Вывести среднее арифметическое двух чисел. Числа спрашивать у пользователя.
 
-let num1 = Number(prompt("Enter any number: "));
-let num2 = Number(prompt("Enter another number: "));
-let sum = num1 + num2;
-let arithmeticMean = sum / 2;
+const num1 = Number(prompt("Enter any number: "));
+const num2 = Number(prompt("Enter another number: "));
+const sum = num1 + num2;
+const arithmeticMean = sum / 2;
 alert("Arithmetic mean is: " + arithmeticMean);
 
 // 3) Перевести число минут в секунды. Число спрашивать у пользователя.
 
-let min = prompt("Enter minutes: ");
-let sec = min * 60;
+const min = Number(prompt("Enter minutes: "));
+const sec = min * 60;
 alert(min + " minutes is " + sec + " seconds.");
 
 // 4) Создайте переменную greeting со значением 'Hello, ' и объявите переменную userName. Спросите имя пользователя и занесите данное значение в переменную userName. С помощью диалога выведите сообщение с приветствием. Например, 'Hello, Vasya!'.
@@ -76,7 +76,7 @@ alert(greeting + ", " + userName + "!");
 // Таски на условия:
 // 1) Спросить переменную у юзера. Если переменная равна числу 10, то выведите 'Верно', иначе выведите 'Неверно'.
 
-let num3 = prompt("Введите число, пожалуйста: ");
+const num3 = Number(prompt("Введите число, пожалуйста: "));
 
 if (num3 === "10") {
   alert("Верно!");
@@ -89,15 +89,15 @@ if (num3 === "10") {
 // Если переменная test не равна true, то выведите 'Верно', иначе выведите 'Неверно'
 // Проверьте работу скрипта при test, равном true, false.
 
-let test = Boolean(prompt("Введите что-нибудь:"));
+const test = Boolean(prompt("Введите что-нибудь:"));
 
-if (test === true) {
+if (test) {
   alert("Верно");
 } else {
   alert("Неверно");
 }
 
-if (test !== true) {
+if (!test) {
   alert("Верно");
 } else {
   alert("Неверно");
@@ -105,13 +105,13 @@ if (test !== true) {
 
 // 3) Вычислить сумму покупки с учетом скидки. Скидка 3% предоставляется, если сумма покупки больше 500 грн., а скидка 5% - если сумма покупки больше 800 грн. Сумму покупки вводит юзер.
 
-let purchaseSum = Number(prompt("Введите сумму покупки: "));
+const purchaseSum = Number(prompt("Введите сумму покупки: "));
 
-if (purchaseSum >= 500 && purchaseSum < 800) {
-  let threePercentDiscount = purchaseSum - purchaseSum * 0.03;
+if (purchaseSum > 500 && purchaseSum < 800) {
+  const threePercentDiscount = purchaseSum - purchaseSum * 0.03;
   alert("Сумма вашей покупки с учетом скидки: " + threePercentDiscount);
-} else if (purchaseSum >= 800) {
-  let fivePercentDiscount = purchaseSum - purchaseSum * 0.05;
+} else if (purchaseSum > 800) {
+  const fivePercentDiscount = purchaseSum - purchaseSum * 0.05;
   alert("Сумма вашей покупки с учетом скидки: " + fivePercentDiscount);
 } else {
   alert("Сумма вашей покупки: " + purchaseSum);
@@ -181,9 +181,12 @@ do {
   console.log(sum3);
 } while (count2 <= 100);
 
-for (let count = 0, sum = 0; count <= 100;  count++, sum = count + sum) {
+for (let count = 0, sum = 0; count <= 100;) { 
+  sum = count + sum;
+  count++;
   console.log(sum);
 }
+
 
 
 // 4) предлагать пользователю решить пример (2 + 2 * 2) до тех пор, пока он его не решит
@@ -191,13 +194,13 @@ for (let count = 0, sum = 0; count <= 100;  count++, sum = count + sum) {
 
 let task;
 while (task != 6) {
-   task = prompt("Напишите ответ примера (2 + 2 * 2): "); 
+   task = Number(prompt("Напишите ответ примера (2 + 2 * 2): ")); 
 } 
 
 do {
-  task = prompt("Напишите ответ примера (2 + 2 * 2): ");
+  task = Number(prompt("Напишите ответ примера (2 + 2 * 2): "));
 } while (task != 6);
 
-for (let task; task !=6; task = prompt("Напишите ответ примера (2 + 2 * 2): "));
+for (let task; task !=6; task = Number(prompt("Напишите ответ примера (2 + 2 * 2): ")));
 
 /******************************************************************/
