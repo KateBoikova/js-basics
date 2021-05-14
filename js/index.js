@@ -107,7 +107,7 @@ if (!test) {
 
 const purchaseSum = Number(prompt("Введите сумму покупки: "));
 
-if (purchaseSum > 500 && purchaseSum < 800) {
+if (purchaseSum > 500 && purchaseSum <= 800) {
   const threePercentDiscount = purchaseSum - purchaseSum * 0.03;
   alert("Сумма вашей покупки с учетом скидки: " + threePercentDiscount);
 } else if (purchaseSum > 800) {
